@@ -7,6 +7,10 @@ class swap_str
     char name[30];
     char name1[30];
 public:
+    swap_str()
+    {
+        cout<<"SWAPPING OF TWO STRINGS"<<endl;
+    }
     void get()
     {
         cout<<"Enter the first string"<<endl;
