@@ -18,6 +18,8 @@ class car
 
     }
     car ( car &X)
+         /// this copy constructor helps in making deep copy in order to overcome
+         /// the creation of shallow copy by the default copy constructor
     {
         price = X.price;
         name = new char[strlen(X.name) +1]; /// creating a new pointer pointing to another memory location on the heap

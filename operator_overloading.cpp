@@ -17,6 +17,14 @@ class car
         price = p; /// created on the stack
 
     }
+    car ( car &X)
+         /// this copy constructor helps in making deep copy in order to overcome
+         /// the creation of shallow copy by the default copy constructor
+    {
+        price = X.price;
+        name = new char[strlen(X.name) +1]; /// creating a new pointer pointing to another memory location on the heap
+        strcpy(name , X.name);
+    }
     void print()
     {
         cout<<"price : "<<price<<endl;
@@ -24,6 +32,20 @@ class car
         cout<<endl;
     }
 
+  void operator +( car &x)
+  {
+      ///char *old = name; /// here we just created a pointer x which points to the  name of the first car
+       /// int a = strlen(name);/// length of name of first car
+       ///int b = strlen(x.name); /// length of name of 2nd car
+       name = new char[10]; /// created another dynamic char array of length a+b+1
+       ///strcpy(name,old);
+       ///strcpy(name+a,x.name);
+       price +=x.price;
+       ///delete []old;
+
+
+
+  }
 
 };
 int main()
@@ -43,7 +65,11 @@ int main()
    B.name[1]='g';
    A.print();
    B.print();
+   A+B;
+   A.print();
+
 
 
 
 }
+
