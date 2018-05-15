@@ -34,14 +34,17 @@ class car
 
   void operator +( car &x)
   {
-      ///char *old = name; /// here we just created a pointer x which points to the  name of the first car
-       /// int a = strlen(name);/// length of name of first car
-       ///int b = strlen(x.name); /// length of name of 2nd car
-       name = new char[10]; /// created another dynamic char array of length a+b+1
-       ///strcpy(name,old);
-       ///strcpy(name+a,x.name);
+      char *old = name; /// here we just created a pointer x which points to the "BMW" ( name of the first car )as
+      /// if this is not done then its name will be lost due to changing its address in the following step
+        int a = strlen(name);/// length of name of first car
+       int b = strlen(x.name); /// length of name of 2nd car
+       name = new char[a+b+1]; /// created another dynamic char array of length a+b+1 , this is the step where
+       /// the overwriting of name pointer takes place as firstly it was pointing to "BMW" (name of first car array)
+       /// now its pointing to the char array on heap having length of a+b+1
+       strcpy(name,old);/// here we copy the name of first car stored in old array( dynamic)
+       strcpy(name+a,x.name);///here we copy the name of second car at the position afterwards from a means after 3 ("BMW")letter
        price +=x.price;
-       ///delete []old;
+       delete []old;
 
 
 
