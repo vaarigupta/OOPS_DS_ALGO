@@ -33,7 +33,8 @@ void addatfront(node* &head , int data)
 
 }
 
-void takedata(node*&head)
+void takedata(node*&head)/// we pass head by reference so we are building it and we dont want
+/// to create any copy of this
 {
     int d;
     cout<<"Enter the value"<<endl;
@@ -47,7 +48,9 @@ void takedata(node*&head)
 
     }
 }
-void print(node*head)
+void print(node*head) /// we pass by value as copy of head is passed not actual head
+/// so that any change in head , does not affect the actual head like if we use head instead of temp
+/// then head becomes NULL at the end of the func but we dont want thats y , we create local copy of head
 {   node* temp;
     temp= head;
     while (temp!=NULL)
@@ -58,13 +61,25 @@ void print(node*head)
     }
     cout<<"NULL"<<endl;
 }
+void operator<<(ostream &o1, node* head)
+{
+    print(head);
+}
+void operator>> (istream &o1, node* &head)
+{
+    takedata(head);
+
+}
 
 int main()
 {
     node *head = NULL;
-    takedata(head);
+    cin>>head;
+    ///takedata(head);
     print(head);
     print(head);
+    cout<<head;
 
     return 0;
 }
+
