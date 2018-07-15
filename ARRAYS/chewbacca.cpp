@@ -30,13 +30,14 @@ int main()
 {
    char num[1000000];
    cin>>num;
-   for(int i=0;num[i]!='\0';i++)
-   { if(num[0]=='9')
+   int i =0;
+    if(num[i]=='9')
      {
          i++;
      }
-      else
-      {
+   for(;num[i]!='\0';i++)
+   {
+
       int digit;
       digit = num[i] - '0'; ///difference of ascii values gives the actual digits
        if(digit>=5)
@@ -44,38 +45,8 @@ int main()
               digit  = 9- digit ;
                 num[i] = digit  + '0';
            }
-      }
-
 
    }
    cout<<num;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   return 0;
 }
