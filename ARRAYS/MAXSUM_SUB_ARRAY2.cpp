@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+///time complexity -> o(n2)
 int main()
 {
     int n,a[100],maxsum=0,left =0,right=0,Cumsum[100] ={0};

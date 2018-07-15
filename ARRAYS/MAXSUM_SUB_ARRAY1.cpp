@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+///time complexity -> o(n3)
 int main()
 {
     int n,a[100],maxsum=0,left =0,right=0;

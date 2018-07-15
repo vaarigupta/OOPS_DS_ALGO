@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+///creating sub array of an array -> means the continuous memory allocation within an array
 int main()
 {
     int n,a[100];

@@ -21,10 +21,60 @@
 //Explanation:
 //There are many numbers form after inverting the digit. For minimum number, check if inverting digit is less than or greater than the original digit. If it is less, then invert it otherwise leave it.
 
+
+
 #include<iostream>
+#include<cstring>
 using namespace std;
 int main()
 {
+   char num[1000000];
+   cin>>num;
+   for(int i=0;num[i]!='\0';i++)
+   { if(num[0]=='9')
+     {
+         i++;
+     }
+      else
+      {
+      int digit;
+      digit = num[i] - '0'; ///difference of ascii values gives the actual digits
+       if(digit>=5)
+           {
+              digit  = 9- digit ;
+                num[i] = digit  + '0';
+           }
+      }
+
+
+   }
+   cout<<num;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
