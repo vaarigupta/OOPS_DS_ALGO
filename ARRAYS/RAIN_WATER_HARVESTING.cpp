@@ -54,33 +54,5 @@ int main()
        diff +=(min(left[i],right[i]) -a[i]);
     }
     cout<<diff;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     return 0;
 }
