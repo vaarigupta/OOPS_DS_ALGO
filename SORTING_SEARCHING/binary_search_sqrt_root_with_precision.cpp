@@ -1,9 +1,10 @@
 #include<iostream>
 using namespace std;
 /// Doing binary search to find out the square root of a number
-int sqrtRoot(int num)
+float sqrtRoot(int num , int p)
 {
-    int s=0, e=num , mid ,ans;
+    int s=0, e=num , mid;
+    float ans;
     while(s<=e)
     {
         mid = (s+e)/2;
@@ -23,14 +24,23 @@ int sqrtRoot(int num)
         }
 
     }
-
+    float inc = 0.1;
+    for(int i =0;i<p;i++)
+    {
+        while(ans*ans <=num)
+        {
+            ans += inc;
+        }
+        ans = ans - inc;
+        inc = inc/10;
+    }
     return ans;
 }
 int main()
 {
-    int num ;
-    cout<<"Please!! Enter the number"<<endl;
-    cin>>num;
-    cout<<"Square Root of "<<num<<" is "<<sqrtRoot(num) ;
+    int num,p;
+    cout<<"Please!! Enter the number along with precision"<<endl;
+    cin>>num>>p;
+    cout<<"Square Root of "<<num<<" is "<<sqrtRoot(num,p) ;
     return 0;
 }
