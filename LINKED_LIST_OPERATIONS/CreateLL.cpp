@@ -81,6 +81,13 @@ void addAtFront(node *&head , int d)
         }
 
     }
+    void insertAtMiddle(node *&head , int data)
+    {
+
+        int mid = length(head)/2;
+        insertAtPosition(head ,data , mid);
+
+    }
 
 
     void print(node *head)
@@ -120,6 +127,8 @@ int main()
    cin>>d>>p;
    insertAtPosition(head1 , d , p);
    cout<<"Linked List after Insertion"<<endl<<head1;
+   insertAtMiddle(head1 ,d);
+  cout<<"Linked List after Insertion in the middle"<<endl<<head1;
 
     return 0;
 }
