@@ -23,31 +23,17 @@ void addAtFront(node *&head , int d)
             head = n;
             return;
         }
+        else{
         node *n = new node(d);
         n->next = head;
         head = n;
        return ;
 
+        }
+
+
 
     }
-//void insertAtTail(node *&head)
-//{
-//    cout<<"Insert number at the tail"<<endl;
-//    int d;
-//    cin>>d;
-//    node  *&save = head;
-//    node *&temp = head;
-//    while(temp!=NULL)
-//    {
-//        temp = temp->next;
-//    }
-//    if(temp->next == NULL)
-//    {
-//        node *n = new node(d);
-//        temp->next = n;
-//    }
-//
-//}
     void takeInput(node *&head)
     {
         int i;
@@ -71,6 +57,32 @@ void addAtFront(node *&head , int d)
         }
         return l;
     }
+    void insertAtPosition(node *&head , int data , int pos)
+    {
+
+        if(pos == 0)
+        {
+            addAtFront(head , data);
+            return;
+        }
+        else
+        {
+        int i = 1;
+        node *temp = head;
+        while(i<=(pos-1))
+        {
+           temp = temp->next;
+           i++;
+        }
+        node *n = new node(data);
+        n->next = temp->next;
+        temp->next = n;
+
+        }
+
+    }
+
+
     void print(node *head)
     {
 
@@ -83,7 +95,7 @@ void addAtFront(node *&head , int d)
         cout<<endl;
     }
 
-    ostream& operator <<(ostream &os , node *head)
+   ostream& operator <<(ostream &os , node *head)
     {
         print(head);
         return os;
@@ -97,17 +109,17 @@ istream& operator>>(istream& is , node* &head)
 
 int main()
 {
+    int d , p;
     node *head1 = NULL;
     node *head2= NULL;
-        //    takeInput(head1);
-     //    takeInput(head2);
-     //    print(head);
-    //    print(head);
     cin>>head1;
    cout<<head1;
-   //insertAtTail(head1);
    int l = length(head1);
-   cout<<"Number of Nodes"<<l;
+   cout<<"Number of Nodes : "<<l<<endl;
+   cout<<"Enter the data and position";
+   cin>>d>>p;
+   insertAtPosition(head1 , d , p);
+   cout<<"Linked List after Insertion"<<endl<<head1;
 
     return 0;
 }
