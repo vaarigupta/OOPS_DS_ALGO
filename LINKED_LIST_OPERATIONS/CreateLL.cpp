@@ -89,6 +89,18 @@ void addAtFront(node *&head , int d)
 
     }
 
+void insertAtEnd(node *&head , int data)
+{
+    int l = length(head) , cnt = 1;
+    node* temp = head ;
+    while(cnt<=l && (temp->next)!=NULL )
+    {
+        temp = temp->next;
+        cnt++;
+    }
+    node *n = new node(data);
+    temp->next = n;
+}
 
     void print(node *head)
     {
@@ -127,8 +139,16 @@ int main()
    cin>>d>>p;
    insertAtPosition(head1 , d , p);
    cout<<"Linked List after Insertion"<<endl<<head1;
+
+   cout<<"Enter the data to be inserted in the middle";
+   cin>>d;
    insertAtMiddle(head1 ,d);
-  cout<<"Linked List after Insertion in the middle"<<endl<<head1;
+  cout<<"Linked List after Insertion in the middle"<<endl<<head1<<endl;
+
+   cout<<"Enter the data to be inserted at the end ";
+   cin>>d;
+  insertAtEnd(head1 , d);
+  cout<<"Linked List after Insertion at the end"<<endl<<head1;
 
     return 0;
 }
