@@ -102,6 +102,33 @@ void insertAtEnd(node *&head , int data)
     temp->next = n;
 }
 
+    void deleteAtFront(node* &head)
+    {
+        node* n = head ;
+        head = head->next;
+        delete n;
+
+    }
+    void deleteAtPosition(node* &head , int pos)
+    {
+        int cnt = 1;
+        node *temp = head;
+        while(cnt <= (pos-1))
+        {
+            temp = temp->next;
+            cnt++;
+        }
+        node *n = temp->next;
+        temp->next = n->next;
+        delete n;
+    }
+    void deleteInMiddle(node *&head )
+    {
+        int mid  = length(head)/2;
+        deleteAtPosition(head,mid);
+
+
+    }
     void print(node *head)
     {
 
@@ -130,7 +157,6 @@ int main()
 {
     int d , p;
     node *head1 = NULL;
-    node *head2= NULL;
     cin>>head1;
    cout<<head1;
    int l = length(head1);
@@ -149,6 +175,14 @@ int main()
    cin>>d;
   insertAtEnd(head1 , d);
   cout<<"Linked List after Insertion at the end"<<endl<<head1;
+  deleteAtFront(head1);
+  cout<<"After deletion"<<endl<<head1<<endl;
+  cout<<"Enter the position where we need to delete"<<endl;
+  cin>>p;
+  deleteAtPosition(head1 , p);
+  cout<<"after deleting"<<endl<<head1;
+   deleteInMiddle(head1);
+   cout<<"After Deleting "<<endl<<head1;
 
     return 0;
 }
