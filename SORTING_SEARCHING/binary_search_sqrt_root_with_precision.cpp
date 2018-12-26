@@ -38,9 +38,9 @@ float sqrtRoot(int num , int p)
 }
 int main()
 {
-    int num,p;
+    int num , prec;
     cout<<"Please!! Enter the number along with precision"<<endl;
-    cin>>num>>p;
-    cout<<"Square Root of "<<num<<" is "<<sqrtRoot(num,p) ;
+    cin>>num>>prec;
+    cout<<"Square Root of "<<num<<" is "<<sqrtRoot(num,prec) ;
     return 0;
 }
