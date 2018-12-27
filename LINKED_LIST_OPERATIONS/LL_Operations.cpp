@@ -42,6 +42,35 @@ void takeInput(node *&head)
         cin>>data;
     }
 }
+bool searchRecursive(node *head , int key)
+{
+   if(head==NULL)
+   {
+       return false;
+   }
+   if(head->data == key)
+   {
+       return true;
+   }
+   return searchRecursive(head->next , key);
+}
+bool searchIterative(node *head , int key)
+{
+    node * temp = head;
+    for(; temp!=NULL ;temp = temp->next)
+    {
+        if(temp->data == key)
+        {
+            return true;
+        }
+
+    }
+    if(temp == NULL)
+    {
+        return false;
+    }
+
+}
 void print ( node *head)
 {
     for(;head!=NULL; head = head->next)
@@ -63,9 +92,22 @@ istream& operator >>(istream &is , node* &head)
 }
 int main()
 {
-
+int key;
 node *head = NULL;
 cin>>head;
 cout<<head;
+cout<<"Enter the element"<<endl;
+cin>>key;
+//bool ans = searchRecursive(head , key);
+bool ans = searchIterative(head , key);
+if(ans)
+{
+    cout<<"Found it "<<endl;
+}
+else
+{
+
+    cout<<"Not Found"<<endl;
+}
     return 0;
 }
