@@ -71,6 +71,21 @@ bool searchIterative(node *head , int key)
     }
 
 }
+int midPoint(node* head)
+{
+    node* slow = head ;
+    node* fast = head->next;
+
+
+    while(fast!=NULL && (fast->next)!=NULL )
+    {
+        fast = fast->next->next;
+        slow = slow->next;
+
+    }
+    return slow->data;
+
+}
 void print ( node *head)
 {
     for(;head!=NULL; head = head->next)
@@ -109,5 +124,7 @@ else
 
     cout<<"Not Found"<<endl;
 }
+int mid = midPoint(head);
+cout<<"Mid point is"<<mid;
     return 0;
 }
