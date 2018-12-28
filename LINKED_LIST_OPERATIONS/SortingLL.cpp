@@ -68,51 +68,51 @@ node* midPoint(node* head)
     return slow;
 
 }
-node* &mergeLL(node *&head1 , node *&head2)
-{
-    node* temp1 = head1;
-    node* temp2 = head2;
-    node* mergeTemp = NULL;
-    while(temp1!= NULL && temp2!=NULL)
-    {
-        if(temp1->data <= temp2->data)
-        {
-
-            addAtFront(mergeTemp , temp1->data);
-            temp1= temp1->next;
-
-        }
-        else
-        {
-            addAtFront(mergeTemp , temp2->data);
-            temp2 = temp2->next;
-
-        }
-
-
-    }
-    if(temp1!=NULL)
-    {
-        while(temp1!= NULL)
-    {
-        addAtFront(mergeTemp,temp1->data);
-        temp1 = temp1->next;
-    }
-
-    }
-
-      if(temp2!= NULL)
-      {
-             while(temp2!= NULL)
-    {
-        addAtFront(mergeTemp,temp2->data);
-        temp2 = temp2->next;
-    }
-      }
-
-
-    return mergeTemp;
-}
+//node* &mergeLL(node *&head1 , node *&head2)
+//{
+//    node* temp1 = head1;
+//    node* temp2 = head2;
+//    node* mergeTemp = NULL;
+//    while(temp1!= NULL && temp2!=NULL)
+//    {
+//        if(temp1->data <= temp2->data)
+//        {
+//
+//            addAtFront(mergeTemp , temp1->data);
+//            temp1= temp1->next;
+//
+//        }
+//        else
+//        {
+//            addAtFront(mergeTemp , temp2->data);
+//            temp2 = temp2->next;
+//
+//        }
+//
+//
+//    }
+//    if(temp1!=NULL)
+//    {
+//        while(temp1!= NULL)
+//    {
+//        addAtFront(mergeTemp,temp1->data);
+//        temp1 = temp1->next;
+//    }
+//
+//    }
+//
+//      if(temp2!= NULL)
+//      {
+//             while(temp2!= NULL)
+//    {
+//        addAtFront(mergeTemp,temp2->data);
+//        temp2 = temp2->next;
+//    }
+//      }
+//
+//
+//    return mergeTemp;
+//}
 node* merge(node * head1 , node* head2)
 {
     node* a = head1;
