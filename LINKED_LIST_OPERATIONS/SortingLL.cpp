@@ -53,6 +53,21 @@ void print (node *head)
     }
     cout<<endl;
 }
+node* midPoint(node* head)
+{
+    node* slow = head ;
+    node* fast = head->next;
+
+
+    while(fast!=NULL && (fast->next)!=NULL )
+    {
+        fast = fast->next->next;
+        slow = slow->next;
+
+    }
+    return slow;
+
+}
 node* &mergeLL(node *&head1 , node *&head2)
 {
     node* temp1 = head1;
@@ -100,9 +115,9 @@ node* &mergeLL(node *&head1 , node *&head2)
 }
 node* merge(node * head1 , node* head2)
 {
-    node* c = NULL;
     node* a = head1;
     node* b = head2;
+    ///Base Case
     if(a== NULL)
     {
         return b;
@@ -111,6 +126,9 @@ node* merge(node * head1 , node* head2)
     {
         return a;
     }
+    ///Rec Case
+    node* c = NULL;
+
     if(a->data <= b->data)
     {
        c = a;
@@ -123,6 +141,25 @@ node* merge(node * head1 , node* head2)
 
     }
     return c;
+}
+
+node *mergeSort(node* head)
+{
+
+    ///Base Case
+    if(head == NULL || (head->next)==NULL)
+    {
+        return head;
+    }
+    ///Divide ,Conquer and Combine
+    node* l1 = head;
+    node* midNode =  midPoint(head);
+    node* l2 = midNode->next;
+    midNode->next = NULL;
+    l1 = mergeSort(l1);
+    l2 = mergeSort(l2);
+    return merge(l1,l2);
+
 }
 istream& operator>>(istream &is , node *&head)
 {
@@ -140,10 +177,11 @@ int main()
     node * head2 = NULL;
     cin>>head1;
     cout<<head1;
-    cin>>head2;
-    cout<<head2;
-    node *MergeList = merge(head1 , head2);
-    cout<<MergeList;
+//    cin>>head2;
+//    cout<<head2;
+//    node *MergeList = merge(head1 , head2);
+   node* MergeList = mergeSort(head1);
+    cout<<"Sorted "<<MergeList;
 
 
 
