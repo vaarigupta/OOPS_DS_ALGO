@@ -73,6 +73,7 @@ node * reverseRec(node * &head)
     return chotaLL;
 
 }
+
 void print(node * head)
 {
     cout<<"Linked List : "<<endl;
