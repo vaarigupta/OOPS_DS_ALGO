@@ -40,7 +40,7 @@ void takeInput(node *&head)
         cin>>d;
     }
 }
-node* reverse (node *&head)
+node* reverseIterative (node *&head)
 {
     node *prev = NULL;
     node * curr = head;
@@ -57,6 +57,21 @@ node* reverse (node *&head)
         //nex = curr->next;
     }
     return prev;
+}
+node * reverseRec(node * &head)
+{
+    ///Base Case
+    if(head== NULL || head->next==NULL)
+    {
+        return head;
+    }
+
+    ///Recursive Case
+    node* chotaLL = reverseRec(head->next);
+    head->next->next = head;
+    head->next = NULL;
+    return chotaLL;
+
 }
 void print(node * head)
 {
@@ -83,7 +98,7 @@ int main()
    node * head = NULL;
    cin>>head;
    cout<<head;
-   cout<<"Reverse"<<reverse(head);
+   cout<<"Reverse"<<reverseRec(head);
 
 
     return 0;
