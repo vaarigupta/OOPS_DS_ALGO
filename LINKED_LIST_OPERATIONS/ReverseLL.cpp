@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+/// Create a New LL with all the nodes Reverse - My approach
 class node
 {
     public:
