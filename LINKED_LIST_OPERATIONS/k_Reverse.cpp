@@ -56,11 +56,26 @@ void print(node * head)
         head = head->next;
     }
 }
+node* reverse(node* head)
+{
+    node *prev = NULL;
+    node* curr = head;
+    node*nex = head;
+    while(nex!=NULL)
+    {
+        nex = nex->next;
+        curr->next = prev;
+        prev = curr;
+        curr = nex;
+    }
+    return prev;
+}
 void kReverse(node* head , int k)
 {
     node * savePtr = new node[](0);
     node * temp = head;
     int cnt = 1;
+    savePtr[1]= head;
     while(temp!=NULL)
     {
         if(cnt%k ==0)
@@ -71,6 +86,7 @@ void kReverse(node* head , int k)
         temp = temp->next;
         cnt++;
     }
+
 
 
 }
