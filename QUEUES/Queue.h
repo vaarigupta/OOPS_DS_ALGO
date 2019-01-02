@@ -1,13 +1,14 @@
 using namespace std;
+template <typename T>
 class Queue
 {
-    int *q;
+    T *q;
     int f , r , maxS , currS ;
 
 public:
     Queue(int d)
     {
-       q = new int[d];
+       q = new T[d];
        maxS = d;
        currS = 0;
        f =0;
@@ -21,7 +22,7 @@ public:
     {
         return currS == maxS;
     }
-    void push(int d)
+    void push(T d)
     {
         if(!isFull())
         {
@@ -39,7 +40,7 @@ public:
             currS--;
         }
     }
-    int getFront()
+    T getFront()
     {
         return q[f];
     }
