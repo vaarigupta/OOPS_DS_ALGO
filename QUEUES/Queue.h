@@ -1,7 +1,7 @@
 using namespace std;
 class Queue
 {
-    int q*;
+    int *q;
     int f , r , maxS , currS ;
 
 public:
@@ -39,4 +39,9 @@ public:
             currS--;
         }
     }
+    int getFront()
+    {
+        return q[f];
+    }
+
 };
