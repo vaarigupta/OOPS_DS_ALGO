@@ -49,7 +49,7 @@ int main()
     node* root = NULL;
    /// cout<<"Enter the Elements : "<<endl;
     root = buildTree();
-    cout<<"Your Tree : ";
+    cout<<"PreOrder Traversal: ";
     print(root);
     return 0;
 }

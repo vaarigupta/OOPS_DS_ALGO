@@ -102,6 +102,7 @@ int main()
 {
     node* root = NULL;
     root = buildTree();
+    cout<<"Level Order Printing : ";
     levelOrderPrint2(root);
 
     return 0;
