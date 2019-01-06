@@ -1,6 +1,7 @@
 #include<iostream>
 #include<queue>
 using namespace std;
+///Approach using Queues
 class node
 {
 public:

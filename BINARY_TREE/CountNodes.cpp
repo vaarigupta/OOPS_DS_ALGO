@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-///Preorder Traversal
+///Approach using Recursion
 class node
 {
     public:
