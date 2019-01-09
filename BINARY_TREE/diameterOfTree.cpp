@@ -39,6 +39,16 @@ void print(node* root)
     print(root->left);
     print(root->right);
 }
+
+int height(node * root)
+{
+    if(root == NULL)
+    {
+        return 0;
+    }
+
+    return 1 + max(height(root->left), height(root->right));
+}
 int diameter(node* root)
 {
     if(root ==NULL)
@@ -48,7 +58,21 @@ int diameter(node* root)
 
     int hmax =  max(diameter(root->left),diameter(root->right));
     int hmin =  min(diameter(root->left),diameter(root->right));
-    return 1 + hmax + hmin ;
+    return 1+ hmax + hmin ;
+
+}
+int diameterCorrect(node* root)
+{
+    if(root == NULL)
+    {
+        return 0;
+    }
+    int op1 = height(root->left) + height(root->right);
+    int op2 = diameterCorrect(root->left);
+    int op3 = diameterCorrect(root->right);
+
+    return max(op1,max( op2, op3));
+
 
 }
 int main()
@@ -57,7 +81,7 @@ int main()
     root = buildTree();
     print(root);
     cout<<endl;
-    cout<<"Diameter "<<diameter(root)<<endl;
+    cout<<"Diameter "<<diameterCorrect(root)<<endl;
     return 0;
 }
 
