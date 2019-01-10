@@ -76,6 +76,33 @@ int diameterCorrect(node* root)
 
 
 }
+
+class Pair{
+    public:
+        int height;
+        int diameter;
+};
+
+Pair fastDiameter(node*root){
+    Pair p;
+    if(root==NULL){
+        p.diameter = p.height = 0;
+        return p;
+    }
+    //Otherwise
+    Pair left = fastDiameter(root->left);
+    Pair right = fastDiameter(root->right);
+
+    int h1 = left.height;
+    int h2 = right.height;
+
+    int d1 = left.diameter;
+    int d2 = right.diameter;
+
+    p.height = 1 + max(h1,h2);
+    p.diameter = max(h1+ h2 , max(d1,d2));
+    return p;
+}
 int main()
 {
     node* root = NULL;
@@ -83,6 +110,9 @@ int main()
     print(root);
     cout<<endl;
     cout<<"Diameter "<<diameterCorrect(root)<<endl;
+    Pair p;
+    p = fastDiameter(root);
+    cout<<"Diameter of Binary Tree "<<p.diameter<<endl;
     return 0;
 }
 
