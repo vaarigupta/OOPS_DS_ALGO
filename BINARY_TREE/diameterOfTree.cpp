@@ -39,7 +39,7 @@ void print(node* root)
     print(root->left);
     print(root->right);
 }
-
+///Complexity - O(n)
 int height(node * root)
 {
     if(root == NULL)
@@ -61,6 +61,7 @@ int diameter(node* root)
     return 1+ hmax + hmin ;
 
 }
+///Complexity - O(n^2)
 int diameterCorrect(node* root)
 {
     if(root == NULL)

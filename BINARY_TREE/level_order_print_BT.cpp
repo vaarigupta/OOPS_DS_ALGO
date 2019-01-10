@@ -1,7 +1,7 @@
 #include<iostream>
 #include<queue>
 using namespace std;
-///Level Order Printing - Breadth First Traversal (BFS)
+///Level Order Printing is also known as Breadth First Traversal (BFS)
 class node
 {
 public:
