@@ -82,7 +82,7 @@ class Pair{
         int height;
         int diameter;
 };
-
+/// complexity - O(n)
 Pair fastDiameter(node*root){
     Pair p;
     if(root==NULL){
