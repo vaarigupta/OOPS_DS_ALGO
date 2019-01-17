@@ -62,6 +62,7 @@ int diameter(node* root)
 
 }
 ///Complexity - O(n^2)
+///Top -down approach
 int diameterCorrect(node* root)
 {
     if(root == NULL)
