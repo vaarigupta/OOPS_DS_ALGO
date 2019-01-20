@@ -92,6 +92,7 @@ int height(node* root)
     int h2 = height(root->right);
     return 1 + max(h1,h2);
 }
+/// complexity - O(n2)
 bool balancedTree(node* root)
 {
     if(root == NULL)
@@ -127,6 +128,7 @@ public:
     int height;
     bool balanced;
 };
+///complexity - O(n)
 myPair fastbalancedTree(node* root)
 {
     myPair p;
