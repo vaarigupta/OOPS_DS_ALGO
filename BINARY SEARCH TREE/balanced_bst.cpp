@@ -1,5 +1,6 @@
 #include<iostream>
 #include<queue>
+#include<cmath>
 using namespace std;
 class node
 {
@@ -119,6 +120,38 @@ bool balancedTree(node* root)
             return false;
         }
 }
+class myPair
+{
+
+public:
+    int height;
+    bool balanced;
+};
+myPair fastbalancedTree(node* root)
+{
+    myPair p;
+    if(root == NULL)
+    {
+       p.height = 0;
+       p.balanced = true;
+       return p;
+    }
+    myPair leftTree = fastbalancedTree(root->left);
+    myPair rightTree = fastbalancedTree(root->right);
+    int h = abs(leftTree.height -rightTree.height);
+    if( h<= 1 && leftTree.balanced && rightTree.balanced)
+    {
+        p.balanced = true;
+    }
+    else
+    {
+        p.balanced = false;
+    }
+    p.height = 1 + max(leftTree.height , rightTree.height);
+    return p;
+
+
+}
 istream& operator>>(istream &is , node* &root)
 {
     root = buildBST();
@@ -134,11 +167,20 @@ int main()
     node* root = NULL;
     cin>>root;
     cout<<"YOUR BINARY SEARCH TREE : "<<endl<<root<<endl;
-    if(balancedTree(root))
+//    if(balancedTree(root))
+//    {
+//        cout<<"yes balanced BST";
+//    }
+//    else
+//    {
+//        cout<<"NO , it is not balanced ";
+//    }
+    myPair p = fastbalancedTree(root);
+    if(p.balanced)
     {
         cout<<"yes balanced BST";
     }
-    else
+     else
     {
         cout<<"NO , it is not balanced ";
     }
