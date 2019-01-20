@@ -82,11 +82,22 @@ void printBylevel(node* root)
         }
     }
 }
+istream& operator>>(istream &is , node*&root)
+{
+    root = buildBST();
+    return is;
+
+}
+ostream& operator<<(ostream &os , node* root)
+{
+    printBylevel(root);
+    return os;
+}
 int main()
 {
 
     node * root = NULL;
-    root = buildBST();
-    printBylevel(root);
+    cin>>root;
+    cout<<root;
     return 0;
 }
