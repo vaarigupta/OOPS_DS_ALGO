@@ -85,6 +85,14 @@ int minNode(node* root)
     }
     return root->data;
 }
+int maxNode(node* root)
+{
+    while(root->right!=NULL)
+    {
+        root = root->right;
+    }
+    return root->data;
+}
 node* deletion (node* &root , int key)
 {
     if(root == NULL)
@@ -139,6 +147,60 @@ node* deletion (node* &root , int key)
     }
 
 }
+node* deletion1(node* &root , int key)
+{
+    if(root == NULL)
+    {
+        return NULL;
+    }
+    if(root->data == key)
+    {
+        ///Cases - 0 child , 1 child , 2 children
+
+        ///0 Child
+        if(root->left == NULL && root->right== NULL)
+        {
+            delete root;
+            return NULL;
+        }
+        /// 1 child
+        else if(root->left== NULL && root->right!=NULL)
+        {
+            node* temp = root->right;
+            delete root;
+            return temp;
+
+        }
+        else if(root->left!=NULL && root->right== NULL)
+        {
+            node* temp  = root->left;
+            delete root;
+            return temp;
+        }
+
+        ///2 children
+        else
+        {
+            int replacement = maxNode(root->left);
+            root->data = replacement;
+            root->left =  deletion(root->left,root->data);
+            return root;
+        }
+    }
+    if(key < root->data )
+    {
+        root->left = deletion(root->left , key);
+        return root;
+
+
+    }
+    if( key > root->data)
+    {
+        root->right = deletion(root->right,key);
+        return root;
+    }
+
+}
 int main()
 {
     node * root = buildBST();
@@ -149,7 +211,7 @@ int main()
     cin>>key;
     while(key!= -1)
     {
-        deletion(root,key);
+        deletion1(root,key);
         printBylevel(root);
         cout<<"Enter the key to be deleted : ";
         cin>>key;
