@@ -82,6 +82,30 @@ void printBylevel(node* root)
         }
     }
 }
+
+///Complexity - O(height of the tree)
+///O(logN)(balanced tree) <= O(H)(general) < O(N) -(skew tree)
+bool searchInBST(node* root , int key)
+{
+    if(root == NULL)
+    {
+        return false;
+    }
+    if(root->data == key)
+    {
+        return true;
+    }
+    if(key <= root->data)
+    {
+        return searchInBST(root->left,key);
+    }
+    if(key > root->data)
+    {
+        return searchInBST(root->right,key);
+    }
+
+
+}
 istream& operator>>(istream &is , node*&root)
 {
     root = buildBST();
@@ -99,5 +123,16 @@ int main()
     node * root = NULL;
     cin>>root;
     cout<<root;
+    int key ;
+    cout<<"Enter the value to be searched :";
+    cin>>key;
+    if(searchInBST(root , key))
+    {
+        cout<<"Yes "<<key<<" is in BST"<<endl;
+    }
+    else
+    {
+        cout<<"Sorry , your key is not in BST "<<endl;
+    }
     return 0;
 }
