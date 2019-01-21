@@ -97,22 +97,31 @@ void printBylevel(node* root)
 }
 bool checkBST(node* root)
 {
+  bool ans1 , ans2;
   if(root == NULL)
   {
       return true;
   }
-  if(root->data > root->left->data)
-  {
-      return checkBST(root->left);
-  }
-  if(root->data < root->right->data)
-  {
-      return checkBST(root->right);
-  }
-  else
-  {
-      return false;
-  }
+     if(root->left->data <= root->data)
+     {
+          ans1 = checkBST(root->left);
+          return ans1;
+
+     }
+     if(root->right->data > root->data)
+     {
+         ans2 = checkBST(root->right);
+         return ans2;
+     }
+     if(ans1 && ans2)
+     {
+         return true;
+     }
+     else
+     {
+         return false;
+     }
+
 
 }
 int main()
