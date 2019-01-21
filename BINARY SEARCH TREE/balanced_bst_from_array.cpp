@@ -68,7 +68,7 @@ void printBylevel(node* root)
 }
 int main()
 {
-    int a[] = {1 ,2 ,3 ,4 ,5,6,7,8,9,10};
+    int a[] = {1 ,2 ,4 ,5,6,8,9};
     int n = sizeof(a)/sizeof(int);
     node* root = BSTfromArray(a,0,n-1);
     printBylevel(root);
