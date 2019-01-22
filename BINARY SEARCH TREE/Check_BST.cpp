@@ -15,6 +15,8 @@ public:
         right = NULL;
     }
 };
+
+///Insert Node in BST
 node* insertInBST(node* &root , int d)
 {
     if(root == NULL)
@@ -32,6 +34,8 @@ node* insertInBST(node* &root , int d)
     }
     return root;
 }
+
+///Build Binary Tree
 node* buildBinaryTree()
 {
     int d;
@@ -48,6 +52,8 @@ node* buildBinaryTree()
     root->right = buildBinaryTree();
     return root;
 }
+
+///Build Binary Search Tree
 node* buildBST()
 {
     int d;
@@ -63,6 +69,7 @@ node* buildBST()
     return root;
 }
 
+///Print by level
 void printBylevel(node* root)
 {
     queue<node*> q;
@@ -95,7 +102,29 @@ void printBylevel(node* root)
     }
 
 }
-bool checkBST(node* root)
+
+node* buildBSTfromArr(int *a,int s , int e)
+{
+    int mid;
+    node* root;
+    if(s>e)
+    {
+        return NULL;
+    }
+    if(s<=e)
+    {
+         mid = (s+e)/2;
+        root = new node(a[mid]);
+        root->left = buildBSTfromArr(a,s,mid-1);
+        root->right = buildBSTfromArr(a,mid+1,e);
+
+    }
+    return root;
+
+}
+
+///Mine Logic - to check given tree is a BST
+bool checkBSTtry(node* root)
 {
   bool ans1 , ans2;
   if(root == NULL)
@@ -104,13 +133,13 @@ bool checkBST(node* root)
   }
      if(root->left->data <= root->data)
      {
-          ans1 = checkBST(root->left);
+          ans1 = checkBSTtry(root->left);
           return ans1;
 
      }
      if(root->right->data > root->data)
      {
-         ans2 = checkBST(root->right);
+         ans2 = checkBSTtry(root->right);
          return ans2;
      }
      if(ans1 && ans2)
@@ -124,12 +153,73 @@ bool checkBST(node* root)
 
 
 }
+
+
+bool checkBST(node* root , int minValue = INT_MIN , int maxValue = INT_MAX)
+{
+    if(root == NULL)
+    {
+        return true;
+    }
+    if(root->data >= minValue && root->data < maxValue && checkBST(root->left,minValue , root->data) && checkBST(root->right,root->data , maxValue))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+int minimum (node* root)
+{
+    if(root == NULL)
+    {
+        return 0;
+    }
+    while(root->left!= NULL)
+    {
+        root = root->left;
+    }
+    return root->data;
+}
+int maximum (node* root)
+{
+    if(root == NULL)
+    {
+        return 0;
+    }
+    while(root->right!= NULL)
+    {
+        root = root->right;
+    }
+    return root->data;
+}
+
+bool checkBST2(node* root)
+{
+    if(root == NULL)
+    {
+        return true;
+    }
+    if(root->data >= maximum(root->left) && root->data < minimum(root->right) && checkBST2(root->left) && checkBST2(root->right))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+
+}
 int main()
 {
-    node* root = buildBinaryTree();
-    cout<<"YOUR BT : "<<endl;
+    int a[] = { 1,2,3,4,5,6,7,8};
+    int n = sizeof(a)/sizeof(int);
+    node* root = buildBSTfromArr(a,0,n-1);
+    cout<<"YOUR BST : "<<endl;
     printBylevel(root);
-    if(checkBST(root))
+    if(checkBST2(root))
     {
         cout<<"Yes it is a BST ";
     }
