@@ -195,7 +195,7 @@ int maximum (node* root)
     }
     return root->data;
 }
-
+///Bottom Up Approach
 bool checkBST2(node* root)
 {
     if(root == NULL)
