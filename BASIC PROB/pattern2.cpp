@@ -2,26 +2,30 @@
 using namespace std;
 int main()
 {
-    int k =1 , j=1;
+    int value;
     for(int row=1;row<=5;row++)
     {
         if(row%2==0)
-           {
-               for(int each=1;each<=row;each++)
         {
-           cout<<j--<<" ";
-           j++;
+            value=1;
+        for(int each=1;each<=row;each++)
+        {
+           value = 1-value;
+          cout<<value<<" ";
 
         }
-           }
-           else
-           { for(int each=1;each<=row;each++)
+        }
+        else
         {
-           cout<<k<<" ";
-           k--;
+            value=0;
+        for(int each=1;each<=row;each++)
+        {
+
+        value = 1-value;
+          cout<<value<<" ";
 
         }
-           }
+        }
 
         cout<<endl;
 
