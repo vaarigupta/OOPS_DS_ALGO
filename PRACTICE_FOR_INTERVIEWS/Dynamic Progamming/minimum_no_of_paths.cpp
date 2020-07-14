@@ -34,6 +34,8 @@ int numberOfPaths(int m, int n)
 // Driver program to test above functions
 int main()
 {
-	cout << numberOfPaths(3,2);
+    int m,n;
+    cin>>m>>n;
+	cout << numberOfPaths(m,n);
 	return 0;
 }

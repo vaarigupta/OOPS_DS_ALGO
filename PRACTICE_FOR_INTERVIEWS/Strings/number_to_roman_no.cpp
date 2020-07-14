@@ -18,7 +18,7 @@ string convertToRoman(int n)
     {100, "C"}, {400, "CD"},
     {500, "D"},{900, "CM"},
     {1000, "M"}};
-      vector<int> romans{1000,900,500,400,100,90,50,40,10,9,5,4,1};
+    vector<int> romans{1000,900,500,400,100,90,50,40,10,9,5,4,1};
     string  output = "";
     int i=0,cnt=0;
     while(n>0)
