@@ -4,7 +4,7 @@
 #include<queue>
 using namespace std;
 template <typename t>
-class graph()
+class graph
 {
 	unordered_map<t,list<t>> adj;
 	int v,e;
@@ -26,10 +26,10 @@ class graph()
 	{
 	for(auto node: adj)
 	{
-		cout<<node.first<<” -> “;
+		cout<<node.first<<" -> ";
 		for(auto nbr: node.second)
 		{
-			cout<<nbr<<” , “;
+			cout<<nbr<<" , ";
 		}
 		cout<<endl;
 	}
@@ -45,7 +45,7 @@ class graph()
 	{
 		t curr = q.front();
 		q.pop();
-		cout<<curr<<” , “;
+		cout<<curr<<" , ";
 		for(auto nbr: adj[curr])
 		{
 			if(!visited[nbr])
@@ -63,7 +63,7 @@ int main()
 {
 	int v,e;
 	cin>>v>>e;
-	graph g(v,e);
+	graph<int> g(v,e);
 	for(int i=0;i<e;i++)
 	{
 		int u,v;
@@ -75,3 +75,20 @@ int main()
 return 0;
 }
 
+/*
+6 7
+0 1
+1 2
+2 4
+4 3
+3 5
+0 4
+2 3
+5 -> 3 ,
+3 -> 4 , 5 , 2 ,
+0 -> 1 , 4 ,
+1 -> 0 , 2 ,
+2 -> 1 , 4 , 3 ,
+4 -> 2 , 3 , 0 ,
+0 , 1 , 4 , 2 , 3 , 5 ,
+*/
