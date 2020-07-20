@@ -14,7 +14,7 @@ class graph
 		this->v = v;
 		this->e = e;
 	}
-	void addEdge(int u, int v, bool bidir = true)
+	void addEdge(t u, t v, bool bidir = true)
 	{
 		adj[u].push_back(v);
 		if(bidir)
@@ -23,7 +23,7 @@ class graph
 		}
 
 	}
-	void dfsHelper(t node, unordered_map<t,bool> &visited , list<t> ordering)
+	void dfsHelper(t node, unordered_map<t,bool> &visited , list<t> &ordering)
 {
 		visited[node] = true;
 		for(auto nbr: adj[node])
@@ -55,21 +55,44 @@ class graph
 };
 int main()
 {
-	int v,e,src;
+	int v,e;
 	cin>>v>>e;
 	graph<int> g(v,e);
 	for(int i=0;i<e;i++)
 	{
 		int u,v;
 		cin>>u>>v;
-		if(i==0)
-		{
-			src = u;
-		}
 		g.addEdge(u,v,false);
 
 	}
 	g.topologicalSortDfs();
 	return 0;
 }
+/*
 
+
+4 4
+1 2
+1 3
+2 4
+3 4
+
+1->2->3->4->
+
+
+9 12
+eng HTML
+eng coding
+Maths coding
+coding HTML
+HTML CSS
+CSS JS
+JS WEB
+coding java
+coding python
+python WEB
+java WEB
+coding JS
+
+Maths->eng->coding->HTML->CSS->JS->python->java->WEB->
+ */
