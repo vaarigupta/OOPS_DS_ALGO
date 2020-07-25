@@ -3,6 +3,7 @@
 #include<list>
 #include<queue>
 using namespace std;
+///Topological Sort using DFS
 template <typename t>
 class graph
 {
@@ -69,13 +70,14 @@ int main()
 	return 0;
 }
 /*
-
-
+2 2
+0 1
+1 0
 4 4
 1 2
-1 3
+3 1
 2 4
-3 4
+4 3
 
 1->2->3->4->
 

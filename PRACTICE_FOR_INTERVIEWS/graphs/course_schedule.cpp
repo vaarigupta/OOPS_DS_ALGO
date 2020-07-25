@@ -37,7 +37,7 @@ class graph
             q.pop();
             for(auto nbr:adj[curr])
             {
-                if(visited[nbr] && nbr!=parent[curr])
+                if(visited[nbr] && nbr==parent[curr])
                 {
                     return true;
                 }
@@ -75,18 +75,14 @@ class graph
 };
 int main()
 {
-	int v,e,src;
+	int v,e;
 	cin>>v>>e;
 	graph<int> g(v,e);
 	for(int i=0;i<e;i++)
 	{
 		int u,v;
 		cin>>u>>v;
-		if(i==0)
-		{
-			src = u;
-		}
-		g.addEdge(u,v);
+		g.addEdge(v,u,false);
 	}
 	if(g.canFinish())
     {
