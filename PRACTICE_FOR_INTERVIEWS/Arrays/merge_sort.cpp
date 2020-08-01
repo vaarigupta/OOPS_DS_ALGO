@@ -2,7 +2,7 @@
 using namespace std;
 void merge(int *arr, int *left, int *right, int s, int e, int mid)
 {
-    int i=s, j= mid+1,k=0;
+    int i=s, j= mid+1,k=s;
     while(i<=mid && j<=e)
     {
         if(left[i]<=right[j])
@@ -25,7 +25,7 @@ void merge(int *arr, int *left, int *right, int s, int e, int mid)
 }
 void merge_sort(int* arr, int s, int e)
 {
-    if(s>e)
+    if(s>=e)
     {
         return;
     }
@@ -42,8 +42,8 @@ void merge_sort(int* arr, int s, int e)
     {
         right[i] = arr[i];
     }
-    merge_sort(arr,s,mid);
-    merge_sort(arr,mid+1,e);
+    merge_sort(left,s,mid);
+    merge_sort(right,mid+1,e);
     merge(arr, left,right,s,e,mid);
 }
 int main()
