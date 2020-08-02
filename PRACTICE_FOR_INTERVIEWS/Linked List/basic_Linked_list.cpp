@@ -89,7 +89,33 @@ class linkedList
         }
         return head;
     }
-
+    void deletion(int place)
+    {
+        if(place==1)
+        {
+            node* temp = head;
+            head = head->next;
+            delete temp;
+            return;
+        }
+        node* prev = NULL;
+        node* temp = head;
+        for(int i=1;i<place;i++)
+        {
+            prev = temp;
+            temp = temp->next;
+        }
+        if(temp->next==NULL)
+        {
+            prev->next = NULL;
+            delete temp;
+            return;
+        }
+        prev->next = temp->next;
+        temp->next = NULL;
+        delete temp;
+        return;
+    }
     void printList()
     {
         node* temp = head;
@@ -98,6 +124,7 @@ class linkedList
             cout<<temp->data<<"->";
             temp = temp->next;
         }
+        cout<<endl;
     }
     void addAtPosition()
     {
@@ -122,6 +149,8 @@ int main()
     linkedList l;
     l.buildList(arr,n);
     l.addAtPosition();
+    l.printList();
+    l.deletion(2);
     l.printList();
     return 0;
 }
