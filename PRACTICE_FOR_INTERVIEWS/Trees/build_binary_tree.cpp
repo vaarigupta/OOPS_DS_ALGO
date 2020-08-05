@@ -1,4 +1,5 @@
 #include<iostream>
+#include<queue>
 using namespace std;
 class node
 {
@@ -59,17 +60,39 @@ void postOrder(node* root)
 	cout<<root->data<<" ";
 }
 
+void levelOrder(node* root)
+{
+	queue<node*> q;
+	q.push(root);
+	while(!q.empty())
+	{
+		node* curr = q.front();
+		cout<<curr->data<<" ";
+		q.pop();
+		if(curr->left)
+		{
+			q.push(curr->left);
+		}
+		if(curr->right)
+		{
+			q.push(curr->right);
+		}
+	}
+}
 
 int main()
 {
 	node* root = NULL;
 	root = buildtree(root);
-	cout<<"PreOrder"<<endl;
+	cout<<"Pre order "<<endl;
 	preOrder(root);
-	cout<<endl<<"InOrder"<<endl;
+	cout<<endl<<"In order "<<endl;
 	inOrder(root);
-	cout<<endl<<"PostOrder"<<endl;
+	cout<<endl<<"Post order "<<endl;
 	postOrder(root);
+	cout<<endl<<"Level order "<<endl;
+	levelOrder(root);
+
 	return 0;
 
 
@@ -80,10 +103,12 @@ int main()
 5 6 -1 2 -1 -1 7 3 -1 -1 1 -1 -1
 
 5 6 -1 2 -1 -1 7 3 -1 -1 1 -1 -1
-PreOrder
+Pre order
 5 6 2 7 3 1
-InOrder
+In order
 6 2 5 3 7 1
-PostOrder
+Post order
 2 6 3 1 7 5
+Level order
+5 6 7 2 3 1
 */
