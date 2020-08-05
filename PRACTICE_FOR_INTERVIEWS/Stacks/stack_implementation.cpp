@@ -12,16 +12,11 @@ public:
     }
     void pop()
     {
-        int n = stk.size();
-        stk.erase(stk.begin()+ n-1);
+        stk.pop_back();
     }
     bool empty()
     {
-        if(stk.size()==0)
-        {
-            return true;
-        }
-        return false;
+        return stk.size()==0?true: false;
     }
     t top()
     {
