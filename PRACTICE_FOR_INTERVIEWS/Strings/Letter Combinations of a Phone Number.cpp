@@ -33,6 +33,8 @@ void letterCombinations(string input,string output,vector<string> &combinations,
 		letterCombinations(input,output + letter, combinations, i+1);
 	}
 }
+
+
 int main()
 {
 string input;
