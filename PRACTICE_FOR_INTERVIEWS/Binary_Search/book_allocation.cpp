@@ -56,7 +56,6 @@ pair<bool,ll>  isPossible(ll N, vector<ll> books, ll stu, ll pages)
         }
         if(curr_pages+books[i]> pages)
         {
-
             k = i-prev;
             p.second = max(p.second,k);
             prev = i;
@@ -98,7 +97,6 @@ pair<ll,ll> max_num_pages(ll N, vector<ll> books, ll stu)
     ll s =0;
     ll e = total_pages;
     ll mid =0;
-    //ll num = 0;
     while(s<=e)
     {
         mid = (s+e)/2;
@@ -128,13 +126,10 @@ int main()
 	    ll total_books,students;
 	    cin>>total_books;
 	    vector<ll> books;
-	    //vector<ll> dist(total_books,0);
-	    //int total_pages = 0;
 	    for(ll i=0;i<total_books;i++)
 	    {
 	        ll pages;
 	        cin>>pages;
-	       // total_pages += pages;
 	        books.push_back(pages);
 	    }
 	    cin>>students;
@@ -182,5 +177,12 @@ Output:
 113
 Elements :3
 12 34 67
+
+4
+12 34 67 90
+3
+90
+Elements :1
+90
 */
 //https://www.geeksforgeeks.org/find-subarray-with-given-sum/

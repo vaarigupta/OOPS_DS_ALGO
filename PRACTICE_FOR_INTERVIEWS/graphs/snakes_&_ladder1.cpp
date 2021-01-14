@@ -4,6 +4,7 @@
 #include<iostream>
 #include <queue>
 using namespace std;
+///from GFG
 struct queueEntry
 {
 	int v;
