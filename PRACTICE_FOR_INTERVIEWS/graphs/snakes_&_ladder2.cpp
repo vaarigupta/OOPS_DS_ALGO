@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+///modification of snake and ladder
 class node
 {
 public:

@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 template<typename t>
+
+///from coding blocks
 class graph
 {
 public:
