@@ -143,7 +143,7 @@ pair<int,int> optimizedDiameter(node* root)
     pair<int,int> r = optimizedDiameter(root->right);
 
     p.first = max(l.first,r.first) + 1;
-    p.second = max(max(l.first+r.first,l.second),r.second);
+    p.second = max(max(l.first+r.first+1,l.second),r.second);
     return p;
 }
 int main()

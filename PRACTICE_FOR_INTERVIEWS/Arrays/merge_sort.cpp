@@ -30,7 +30,7 @@ void merge_sort(int* arr, int s, int e)
         return;
     }
 
-    int mid = (s+e)/2;
+    int mid = s + (e-s)/2;
     int left[100];
     int right[100];
     for(int i=s;i<=mid;i++)

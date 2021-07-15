@@ -105,11 +105,7 @@ int height(node* root)
 {
     if(root == NULL)
     {
-        return 0;
-    }
-    if(root->left==NULL && root->right==NULL)
-    {
-        return 1;
+        return -1;
     }
     int l = height(root->left);
     int r = height(root->right);
@@ -145,7 +141,7 @@ int diameter(node * root)
     }
     int leftD = diameter(root->left);
     int rightD = diameter(root->right);
-    int totalH = height(root->left) + height(root->right);
+    int totalH = height(root->left) + height(root->right)+2;
 
     return max(max(leftD,rightD),totalH);
 }
