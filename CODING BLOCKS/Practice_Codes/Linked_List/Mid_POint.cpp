@@ -84,7 +84,7 @@ int midPoint(node* head)
         return head->data;
     }
     node* slow = head;
-    node* fast= head->next;
+    node* fast= head;
 
     while( fast!=NULL && fast->next!=NULL)
     {

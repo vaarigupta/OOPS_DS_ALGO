@@ -46,6 +46,14 @@ void merge_sort(int* arr, int s, int e)
     merge_sort(right,mid+1,e);
     merge(arr, left,right,s,e,mid);
 }
+//void print(vector<int> arr, int n)
+//{
+//    for(int i=0;i<n;i++)
+//    {
+//        cout<<arr[i]<<" ";
+//    }
+//    cout<<endl;
+//}
 int main()
 {
 	int n;

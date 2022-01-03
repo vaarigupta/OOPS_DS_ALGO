@@ -127,10 +127,10 @@ int height(node* root)
     {
         return 0;
     }
-    if(root->left==NULL && root->right==NULL)
-    {
-        return 1;
-    }
+//    if(root->left==NULL && root->right==NULL)
+//    {
+//        return 1;
+//    }
     int l = height(root->left);
     int r = height(root->right);
     return 1 + max(l,r);
@@ -154,6 +154,8 @@ int main()
 Level order Print :
 8 10 3 1 6 14 9 7 13
 Height of tree : 4
+
+1 2 4 -1 -1 5 -1 -1 3 -1 -1
 
 */
 
