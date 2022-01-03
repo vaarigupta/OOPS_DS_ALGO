@@ -72,7 +72,8 @@ int Ways_of_CoinsBU(int *coins, int amt , int n)
 int main()
 {
     int dp[100]={0};
-    int coins[] = {1,7,10};
+    //int coins[] = {1,7,10};
+    int coins[] = {2,5,3,6};
     int n = sizeof(coins)/sizeof(int);
     int amt;
     cin>>amt;

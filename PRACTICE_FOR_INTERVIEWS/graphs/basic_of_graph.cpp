@@ -56,9 +56,10 @@ public:
     {
         unordered_map<t,int> dist; /// minimum dist from the source node
         unordered_map<t,t> parent; /// parent of the node
-        queue<t> q; ///to visit onnly for once
+        queue<t> q; ///to visit only for once
         for(auto x: adlist)
         {
+            ///each vertex
             dist[x.first] = INT_MAX; ///store with big value first
         }
         q.push(src);

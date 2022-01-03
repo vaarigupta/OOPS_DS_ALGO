@@ -3,19 +3,22 @@
 using namespace std;
 void bubble_sort(vector<int> &arr, int n)
 {
-
+int count =0;
 
 for(int i=0;i<n-1;i++)
 {
+
 	for(int j=0;j<n-i-1;j++)
 	{
 		if(arr[j]>arr[j+1])
 		{
 			swap(arr[j],arr[j+1]);
+			count++;
 		}
 
 	}
 }
+cout<<count;
 }
 void optimized_bubble_sort(vector<int> &arr, int n)
 {
@@ -48,7 +51,9 @@ int main()
 		cin>>num;
 		arr.push_back(num);
 	}
-	optimized_bubble_sort(arr,n);
+	bubble_sort(arr,n);
+
+	//optimized_bubble_sort(arr,n);
 	for(int i=0;i<n;i++)
 	{
 		cout<<arr[i]<<" ";
