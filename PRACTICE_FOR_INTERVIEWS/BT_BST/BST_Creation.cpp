@@ -54,11 +54,29 @@ void PreOrderBSTTraversal(node* root)
     {
         return;
     }
-    cout<<root->data<<endl;
+    cout<<root->data<<" ";
     PreOrderBSTTraversal(root->left);
     PreOrderBSTTraversal(root->right);
 }
 
+void InOrderTraversal(node* root)
+{
+    if(root==NULL)
+        return;
+
+    InOrderTraversal(root->left);
+    cout<<root->data<<" ";
+    InOrderTraversal(root->right);
+}
+void PostOrderTraversal(node* root)
+{
+
+    if(root==NULL)
+        return;
+    PostOrderTraversal(root->left);
+    PostOrderTraversal(root->right);
+    cout<<root->data<<" ";
+}
 void LevelOrderBSTTraversal(node* root)
 {
     queue<node*> q;
@@ -96,6 +114,11 @@ int main()
     vector<int> arr = {4,3,2,1,5,6};
     node* root = buildBST(arr);
     PreOrderBSTTraversal(root);
+    cout<<endl;
+    InOrderTraversal(root);
+    cout<<endl;
+    PostOrderTraversal(root);
+    cout<<endl;
     LevelOrderBSTTraversal(root);
 
     return 0;
