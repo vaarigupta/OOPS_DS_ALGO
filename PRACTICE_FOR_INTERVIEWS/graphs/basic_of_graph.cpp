@@ -75,7 +75,7 @@ public:
                 if(dist[nbr]==INT_MAX)
                 {
                     q.push(nbr);
-                    dist[nbr] = dist[node] + 1; ///update distance of each neighbour
+                    dist[nbr] = dist[node] + 1; ///update distance of each neighbour using distance from parent
                     parent[nbr] = node; ///update parent of each neighbour
                 }
             }

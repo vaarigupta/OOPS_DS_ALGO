@@ -22,9 +22,9 @@ node* buildTree()
     cout<<"Enter the data : ";
     cin>>d;
     ///base case
-    if(d== -1)
+    if(d == -1)
     {
-        return NULL;
+       return NULL;
     }
 
     ///rec case

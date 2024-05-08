@@ -51,23 +51,23 @@ public:
             cout<<endl;
         }
     }
-//    void dfs_helper(t src, map<t, bool> &visited)
-//    {
-//        visited[src] = true;
-//        cout<<src<<" ";
-//        for(t nbr: adjList[src])
-//        {
-//            if(!visited[src])
-//            {
-//                dfs_helper(nbr,visited);
-//            }
-//        }
-//    }
-//    void dfs(t src)
-//    {
-//        map<t,bool> visited;
-//        dfs_helper(src,visited);
-//    }
+    void dfs_helper(t src, map<t, bool> &visited)
+    {
+        visited[src] = true;
+        cout<<src<<" ";
+        for(t nbr: adjList[src])
+        {
+            if(!visited[src])
+            {
+                dfs_helper(nbr,visited);
+            }
+        }
+    }
+    void dfs(t src)
+    {
+        map<t,bool> visited;
+        dfs_helper(src,visited);
+    }
 
 };
 int main()

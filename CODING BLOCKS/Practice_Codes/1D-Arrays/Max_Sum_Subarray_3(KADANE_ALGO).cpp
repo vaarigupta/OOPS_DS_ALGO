@@ -4,7 +4,7 @@ using namespace std;
 ///generating max sum of subarray in o(n) time - "KADANE ALGO"
 void maxSum(int a[], int n)
 {
-    int currSum = 0, maxSum1 = 0;
+    int currSum = 0, max_sum = 0;
     for(int i=0;i<n;i++)
     {
        currSum += a[i];
@@ -12,9 +12,9 @@ void maxSum(int a[], int n)
        {
            currSum = 0;
        }
-       maxSum1 = max(maxSum1,currSum);
+        max_sum = max( max_sum,currSum);
     }
-    cout<<"Max Sum :"<<maxSum1<<endl;
+    cout<<"Max Sum :"<< max_sum<<endl;
 //    for(int i=x;i<=y;i++)
 //    {
 //        cout<<a[i]<<" ";

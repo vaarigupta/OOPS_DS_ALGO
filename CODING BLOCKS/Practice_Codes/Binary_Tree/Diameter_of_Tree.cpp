@@ -141,7 +141,7 @@ int diameter(node * root)
     }
     int leftD = diameter(root->left);
     int rightD = diameter(root->right);
-    int totalH = height(root->left) + height(root->right)+2;
+    int totalH = height(root->left) + height(root->right)+1;
 
     return max(max(leftD,rightD),totalH);
 }

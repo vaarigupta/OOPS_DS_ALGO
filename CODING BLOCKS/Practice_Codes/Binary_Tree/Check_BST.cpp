@@ -155,14 +155,7 @@ node* righMinVal(node* root)
     }
     return root;
 }
-node* BSTtoLL(node* & root)
-{
-    if(root==NULL || (root->left==NULL && root->right==NULL) )
-    {
-        return root;
-    }
 
-}
 int main()
 {
     node* root =NULL;

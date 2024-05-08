@@ -124,7 +124,7 @@ int diameter(node * root)
     }
     int leftD = diameter(root->left);
     int rightD = diameter(root->right);
-    int totalH = height(root->left) + height(root->right);
+    int totalH = height(root->left) + height(root->right)+1;
 
     return max(max(leftD,rightD),totalH);
 }
@@ -156,6 +156,7 @@ int main()
     pair<int,int> p = optimizedDiameter(root);
     cout<<endl<<"Height of tree : "<<p.first<<endl;
     cout<<endl<<"Diameter of tree : "<<p.second<<endl;
+     cout<<endl<<"Diameter of tree : "<<diameter(root)<<endl;
     return 0;
 }
 

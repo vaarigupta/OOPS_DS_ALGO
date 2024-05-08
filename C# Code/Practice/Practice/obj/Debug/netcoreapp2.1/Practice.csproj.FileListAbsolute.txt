@@ -1,0 +1,11 @@
+D:\Coding\OOPS_DS_ALGO\C# Code\Practice\Practice\bin\Debug\netcoreapp2.1\Practice.deps.json
+D:\Coding\OOPS_DS_ALGO\C# Code\Practice\Practice\bin\Debug\netcoreapp2.1\Practice.runtimeconfig.json
+D:\Coding\OOPS_DS_ALGO\C# Code\Practice\Practice\bin\Debug\netcoreapp2.1\Practice.runtimeconfig.dev.json
+D:\Coding\OOPS_DS_ALGO\C# Code\Practice\Practice\bin\Debug\netcoreapp2.1\Practice.dll
+D:\Coding\OOPS_DS_ALGO\C# Code\Practice\Practice\bin\Debug\netcoreapp2.1\Practice.pdb
+D:\Coding\OOPS_DS_ALGO\C# Code\Practice\Practice\obj\Debug\netcoreapp2.1\Practice.csprojAssemblyReference.cache
+D:\Coding\OOPS_DS_ALGO\C# Code\Practice\Practice\obj\Debug\netcoreapp2.1\Practice.csproj.CoreCompileInputs.cache
+D:\Coding\OOPS_DS_ALGO\C# Code\Practice\Practice\obj\Debug\netcoreapp2.1\Practice.AssemblyInfoInputs.cache
+D:\Coding\OOPS_DS_ALGO\C# Code\Practice\Practice\obj\Debug\netcoreapp2.1\Practice.AssemblyInfo.cs
+D:\Coding\OOPS_DS_ALGO\C# Code\Practice\Practice\obj\Debug\netcoreapp2.1\Practice.dll
+D:\Coding\OOPS_DS_ALGO\C# Code\Practice\Practice\obj\Debug\netcoreapp2.1\Practice.pdb
