@@ -27,7 +27,7 @@
 *.lib
 
 # Executables
-/ADVANCED/BINARY SEARCH TREE/*.exe
-**/*.o
-*.out
-*.app
+**/**/*.exe
+**/**/*.o
+**/*.out
+**/*.app
