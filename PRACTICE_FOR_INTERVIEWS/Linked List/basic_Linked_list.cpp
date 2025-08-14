@@ -100,7 +100,7 @@ class linkedList
         }
         node* prev = NULL;
         node* temp = head;
-        for(int i=1;i<place;i++)
+        for(int i=1;temp->next!=NULL && i<place;i++)
         {
             prev = temp;
             temp = temp->next;

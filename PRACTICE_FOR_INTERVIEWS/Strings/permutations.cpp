@@ -1,18 +1,18 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-void permutation(int n,vector<int> nums,vector<vector<int> > &permute, int first)
+void permutation(int n,vector<int> nums,vector<vector<int> > &permute, int i)
 {
-	if(first==n)
+	if(i==n)
 	{
 		permute.push_back(nums);
 		return;
 	}
-	for(int i=first;i<n;i++)
+	for(int j=i;j<n;j++)
 	{
-		swap(nums[first], nums[i]);
-		permutation(n,nums,permute,first+1);
-		swap(nums[first], nums[i]);
+		swap(nums[i], nums[j]);
+		permutation(n,nums,permute,i+1);
+		swap(nums[i], nums[j]);
 	}
 }
 int main()

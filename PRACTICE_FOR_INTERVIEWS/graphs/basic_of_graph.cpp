@@ -20,7 +20,7 @@ public:
     }
     void printGraph()
     {
-        for(auto x: adlist)
+        for(pair<t,list<t>> x: adlist)
         {
             cout<<x.first<<"=>";
             for(auto y : x.second)
@@ -123,6 +123,8 @@ int main()
         g.addEdge(3,4);
         g.addEdge(3,5);
         g.dfs(0);
+        cout<<endl;
+        g.printGraph();
        // g.sssp(0,2);
     return 0;
 }
